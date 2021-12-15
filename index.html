@@ -6,70 +6,88 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
 </head>
 
 <body>
-    <h2 style="text-align: center;"> Hangman Game</h2>
+
+    <h1
+        style="text-align: center; font-size: 50px;background-image: linear-gradient(to left,#7b4397 , #dc2430);border-radius: 20px;">
+        Hangman Game</h1>
     <script>
-        var array = ["jpg1.png", 'jpg2.png', 'jpg3.png', "jpg4.png", "jpg5.png", "jpg6.png", "jpg7.png"]
-        console.log(e)
-        var myimg = document.createElement("div");
-        myimg.style.width = "150px";
-        myimg.style.height = "250px";
-        myimg.style.marginright = "150px";
-        myimg.style.marginleft = "160px";
-        myimg.style.position = "relative";
-        myimg.style.backgroundColor = "white";
-        myimg.style.left = "200px";
-        document.body.appendChild(myimg)
+        var array = ["jpg1.png", 'jpg2.png',
+            'jpg3.png', "jpg4.png", "jpg5.png",
+            "jpg6.png", "jpg7.png"]
+        var words = ["GOOGLE", 'MICROSOFT', "ZOHO", "INFOSYS", "WIPRO", "TATA", "TESLA",
+                     "AMAZON", "FACEBOOK", "APPLE", "FRESHWORKS"]
+        var myImage = document.createElement("div");
+
+
+        document.body.appendChild(myImage)
         var image = document.createElement("img");
+        image.style.marginLeft = "130px";
+        image.style.width = "260px";
+        image.style.height = "auto";
+
         image.setAttribute("src", array[0])
-        myimg.appendChild(image)
+
+        myImage.appendChild(image)
         var d = 0;
         var e = 0;
         var win = 0;
-        var words = ["GOOGLE", 'MICROSOFT', "TESLA", "AMAZON", "FACEBOOK", "APPLE", "FRESHWORKS"]
+
         var letters = (words[Math.floor(Math.random() * (words.length))]).split("")
         console.log(letters)
-        var test = document.createElement("div");
-        test.style.width = '100%';
-        test.style.position = "absolute";
-        test.style.left = "150px";
-        test.style.top = "350px";
-        test.style.marginbottom = "200px";
-        test.style.height = "100px";
-        test.style.display = "flex";
-        test.style.flexDirection = "row";
-        test.style.flexWrap = "wrap";
+        var wordTest = document.createElement("div");
+        wordTest.style.width = '100%';
+        wordTest.style.position = "absolute";
+        wordTest.style.left = "480px";
+        wordTest.style.top = "250px";
+        wordTest.style.marginbottom = "200px";
+        wordTest.style.height = "300px";
+        wordTest.style.display = "flex";
         for (i = 0; i < letters.length; i++) {
-            var fruit = document.createElement("div");
-            fruit.style.width = "50px";
-            fruit.setAttribute("id", i)
-            fruit.style.height = "50px";
-            fruit.style.marginRight = "2px";
-
-            fruit.style.backgroundColor = "orange";
-            test.appendChild(fruit)
+            var company = document.createElement("div");
+            company.style.width = "50px";
+            company.setAttribute("id", i)
+            company.style.height = "50px";
+            company.style.marginRight = "2px";
+            company.style.borderRadius = "10px";
+            company.style.padding = "5px";
+            company.style.textAlign = "center";
+            company.style.fontSize = "40px";
+            company.style.backgroundImage = "linear-gradient(to top, #2193b0 , #6dd5ed)";
+            wordTest.appendChild(company)
         }
 
-        document.body.appendChild(test)
+        document.body.appendChild(wordTest)
 
-        var alpha = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-        var alphabets = (alpha.split(""))
+        var Alphabets = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        var singleLetter = (Alphabets.split(""))
 
         var board = document.createElement("div")
         board.style.width = "340px";
         board.style.position = "absolute";
         board.style.top = "220px"
         board.style.display = "flex";
-        board.style.marginTop = "200px";
-        board.style.marginLeft = "170px";
+        board.style.marginTop = "150px";
+        board.style.marginLeft = "510px";
+
+
+
+
         board.style.flexDirection = "row";
         board.style.flexWrap = "wrap";
         document.body.appendChild(board)
-        for (i = 0; i < (alphabets.length); i++) {
+        for (i = 0; i < (singleLetter.length); i++) {
             var buttons = document.createElement("button");
-            buttons.innerText = alphabets[i];
+            buttons.innerText = singleLetter[i];
+            buttons.style.backgroundImage = "linear-gradient(to top,#bdc3c7 , #2c3e50)";
+            buttons.style.borderRadius = "20px";
+            buttons.style.padding = "12px 15px";
+            buttons.style.marginTop = "10px";
+            buttons.style.fontWeight = "bold";
+            buttons.style.color = "white";
             buttons.addEventListener("click", function () {
 
                 this.disabled = "true"
@@ -109,6 +127,7 @@
         }
 
     </script>
+
 </body>
 
 </html>
